@@ -15,8 +15,7 @@ options = {
 var map = new mapboxgl.Map(options);
 
 var nameDisplay = document.getElementById('name');
-var streetDisplay = document.getElementById('street');
-var buildingDisplay = document.getElementById('loc');
+var addressDisplay = document.getElementById('address');
 var chairsDisplay = document.getElementById('chairs');
 
 ////////////////////// SOURCE AND LAYER //////////////////////
@@ -132,18 +131,16 @@ map.on('mousemove', 'sidewalkCafes-fill', (e) => {
 
   // Set variables equal to the current feature's magnitude, location, and time
   var sidewalkcafeName = e.features[0].properties.BUSINESS_NAME2
-  var sidewalkcafeStreet = e.features[0].properties.STREET
-  var sidewalkcafeBuilding = e.features[0].properties.BUILDING
   var sidewalkcafeChairs = e.features[0].properties.APP_CHAIRS
-
+  var sidewalkcafeAddress = e.features[0].properties.STREET+' '+e.features[0].properties.BUILDING
   // Check whether features exist
   if (e.features.length > 0) {
 
     // Display the information in the sidebar
-    nameDisplay.textContent = sidewalkcafeName;
-    streetDisplay.textContent = sidewalkcafeStreet;
-    buildingDisplay.textContent = sidewalkcafeBuilding;
-    chairsDisplay.textContent = sidewalkcafeChairs;
+    nameDisplay.textContent = sidewalkcafeName.toLowerCase();
+    addressDisplay.textContent = sidewalkcafeAddress.toLowerCase();
+    chairsDisplay.textContent = sidewalkcafeChairs
+
 
     // set this lot's polygon feature as the data for the highlight source
     map.getSource('highlight-feature').setData(e.features[0].geometry);

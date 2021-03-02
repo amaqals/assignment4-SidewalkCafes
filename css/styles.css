@@ -28,7 +28,7 @@ html, body, .container, #sidebar, #mapContainer{
 #info{
 }
 
-#name, #street, #building, #chairs {
+#name, #address, #chairs {
   color:yellow;
   margin:5px;
   font-family:'Helvetica';
