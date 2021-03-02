@@ -142,7 +142,7 @@ map.on('mousemove', 'sidewalkCafes-fill', (e) => {
     // Display the information in the sidebar
     nameDisplay.textContent = sidewalkcafeName;
     streetDisplay.textContent = sidewalkcafeStreet;
-    //buildingDisplay.textContent = sidewalkcafeBuilding;
+    buildingDisplay.textContent = sidewalkcafeBuilding;
     chairsDisplay.textContent = sidewalkcafeChairs;
 
     // set this lot's polygon feature as the data for the highlight source
