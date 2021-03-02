@@ -1,0 +1,52 @@
+html, body, .container, #sidebar, #mapContainer{
+  height:100%;
+  margin: 0;
+}
+
+
+.container{
+  display:flex;
+}
+
+.content{
+  margin:25px;
+  outline: thin solid #ffff;
+  outline-style: dotted;
+}
+
+/* id style definition */
+#sidebar{
+  background: black;
+  /*width: 20%;*/
+  width: 320px;
+}
+
+#mapContainer {
+  flex-grow:1; /* to fill the rest of the page */
+}
+
+#info{
+}
+
+#name, #street, #building, #chairs {
+  color:yellow;
+  margin:5px;
+  font-family:'Helvetica';
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+/* text */
+h1, p {
+  color:white;
+  margin:20px;
+  margin-top:20px;
+}
+h1{
+  font-family: 'Georgia', sans-serif;
+}
+
+p {
+  font-family: 'Helvetica', sans-serif;
+  font-size:12px;
+}
