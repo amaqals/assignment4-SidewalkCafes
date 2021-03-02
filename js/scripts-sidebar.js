@@ -22,11 +22,33 @@ var chairsDisplay = document.getElementById('chairs');
 ////////////////////// SOURCE AND LAYER //////////////////////
 map.on('style.load', function () {
 
+
   // source (id=sidewalkCafes)
   map.addSource('sidewalkCafes', {
     type: 'geojson',
-    data: '/data/sidewalk-cafes-withID-2.geojson'
+    data: '/data/sidewalk-cafes-withID.geojson'
   });
+
+  /*
+  // work in progress: load subway stations
+
+  // source (id=subway)
+  map.addSource('subway', {
+    type: 'geojson',
+    data: '/data/subway-stations.geojson'
+  });
+
+// layer: subway stations
+  map.addLayer({
+    'id': 'subwaystations', // layer id
+    'type': 'symbol', // fill the polygons
+    'source': 'subway', // the source to paint
+    'layout': {
+      'icon-image':'/im/icon-01.png',
+      //'icon-size':
+    }
+  });
+  */
 
   // layer: sidewalk
   map.addLayer({
