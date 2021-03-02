@@ -26,7 +26,7 @@ map.on('style.load', function () {
   // source (id=sidewalkCafes)
   map.addSource('sidewalkCafes', {
     type: 'geojson',
-    data: '/data/sidewalk-cafes-withID.geojson'
+    data: 'data/sidewalk-cafes-withID.geojson'
   });
 
   /*
