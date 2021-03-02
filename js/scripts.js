@@ -8,7 +8,7 @@ options = {
   container: 'mapContainer', // container ID, the div
   style: 'mapbox://styles/mapbox/dark-v10',
   center: [-73.963566,40.743225], // [lng, lat]
-  zoom: 12 // starting zoom level
+  zoom: 10 // starting zoom level
 }
 
 // load the map

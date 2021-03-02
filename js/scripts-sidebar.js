@@ -8,7 +8,7 @@ options = {
   container: 'mapContainer', // container ID, the div
   style: 'mapbox://styles/mapbox/dark-v10',
   center: [-73.963566,40.743225], // [lng, lat]
-  zoom: 11 // starting zoom level
+  zoom: 12 // starting zoom level
 }
 
 // load the map
@@ -81,7 +81,8 @@ map.on('style.load', function () {
       type: 'circle',
       source: 'highlight-feature',
       paint: {
-        'circle-color':'#ff00ee',
+        'circle-stroke-color':'#ffffff',
+        'circle-stroke-width':2,
         'circle-opacity':1,
         'circle-radius':{
           'property':'APP_CHAIRS',
