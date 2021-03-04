@@ -28,26 +28,6 @@ map.on('style.load', function () {
     data: 'data/sidewalk-cafes-withID.geojson'
   });
 
-  /*
-  // work in progress: load subway stations
-
-  // source (id=subway)
-  map.addSource('subway', {
-    type: 'geojson',
-    data: '/data/subway-stations.geojson'
-  });
-
-// layer: subway stations
-  map.addLayer({
-    'id': 'subwaystations', // layer id
-    'type': 'symbol', // fill the polygons
-    'source': 'subway', // the source to paint
-    'layout': {
-      'icon-image':'/im/icon-01.png',
-      //'icon-size':
-    }
-  });
-  */
 
   // layer: sidewalk
   map.addLayer({
@@ -56,8 +36,6 @@ map.on('style.load', function () {
     'source': 'sidewalkCafes', // the source to paint
     'layout': {},
     'paint': {
-      //'circle-color':'#faff00',
-
       'circle-color': [
           'match',
           ['get', 'APP_SWC_TYPE'],
@@ -130,6 +108,7 @@ map.on('mousemove', 'sidewalkCafes-fill', (e) => {
   map.getCanvas().style.cursor = 'pointer';
 
   // Set variables equal to the current feature's magnitude, location, and time
+
   var sidewalkcafeName = e.features[0].properties.BUSINESS_NAME2
   var sidewalkcafeChairs = e.features[0].properties.APP_CHAIRS
   var sidewalkcafeAddress = e.features[0].properties.STREET+' '+e.features[0].properties.BUILDING
@@ -137,9 +116,14 @@ map.on('mousemove', 'sidewalkCafes-fill', (e) => {
   if (e.features.length > 0) {
 
     // Display the information in the sidebar
-    nameDisplay.textContent = sidewalkcafeName.toLowerCase();
+    if (sidewalkcafeName == null){
+      nameDisplay.textContent = 'unknown'
+    } else {
+      nameDisplay.textContent = sidewalkcafeName.toLowerCase();
+    }
     addressDisplay.textContent = sidewalkcafeAddress.toLowerCase();
     chairsDisplay.textContent = sidewalkcafeChairs
+
 
 
     // set this lot's polygon feature as the data for the highlight source
@@ -185,8 +169,7 @@ map.on("mouseleave", "sidewalkCafes-fill", function() {
   cafeID = null;
   // Remove the information from the previously hovered feature from the sidebar
   nameDisplay.textContent = '';
-  streetDisplay.textContent = '';
-  //buildingDisplay.textContent = '';
+  addressDisplay.textContent = '';
   chairsDisplay.textContent = '';
 
   // Reset the cursor style

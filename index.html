@@ -17,14 +17,48 @@
     <div id='sidebar'>
       <div class='content'>
         <h1>Sidewalk Cafés</h1>
-        <p> This maps features sidewalk cafés in NYC. </br>
-        Do you want to explore it? </p>
+        <p> This maps features <a href="https://data.cityofnewyork.us/Business/Sidewalk-Caf-Licenses-and-Applications/qcdj-rwhu">sidewalk cafés</a> in NYC. </br></br>
+        Do you want to explore it? Hover on the points to extract information </p>
+
+        <!-- hover interactivity -->
         <div id='info'>
           <div><p>Café name:<span id='name'></span></p></div>
           <div><p>Location:<span id='address'></span></p></div>
 
           <div><p>Number of chairs:<span id='chairs'></span></p></div>
         </div>
+
+        <!-- legend -->
+        <div class='legend-box'>
+          <p>Sidewalk café types</p>
+          <div class="legend">
+            <div class=colors id=type1> </div>
+            <div class=names>Enclosed</div>
+          </div>
+          <div class="legend">
+            <div class=colors id=type2> </div>
+            <div class=names>Regular Unenclosed / Small Unenclosed</div>
+          </div>
+          <div class="legend">
+            <div class=colors id=type3> </div>
+            <div class=names>Small Unenclosed</div>
+          </div>
+          <div class="legend">
+            <div class=colors id=type4> </div>
+            <div class=names>Unenclosed</div>
+          </div>
+          <p>The size of the circles represents the number of available chairs</p>
+        </div>
+
+<!--
+             <div><span style="{background-image: url('../icons/bicing-icon.png'); width: 15px; height: 15px;}"></span>normal bikes</div>
+             <div><span style="{background-image: url('../icons/bicing-icon-e.png'); width: 15px; height: 15px;}"></span>electric bikes</div>
+-->
+
+
+
+
+
       </div>
 
     </div>
