@@ -7,8 +7,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxiYWxzaW5hIiwiYSI6ImNqdjgzcG02MDAzYXE0NG10b
 options = {
   container: 'mapContainer', // container ID, the div
   style: 'mapbox://styles/mapbox/dark-v10',
-  center: [-73.963566,40.743225], // [lng, lat]
-  zoom: 12 // starting zoom level
+  center: [-73.978608,40.760635], // [lng, lat]
+  zoom: 12.5 // starting zoom level
 }
 
 // load the map
